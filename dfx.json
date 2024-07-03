@@ -1,0 +1,50 @@
+{
+  "canisters": {
+    "examenchuy_backend": {
+      "build": "npx azle examenchuy_backend",
+      "candid": "src/examenchuy_backend/examenchuy_backend.did",
+      "gzip": true,
+      "main": "src/examenchuy_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/examenchuy_backend/examenchuy_backend.wasm"
+    },
+    "examenchuy_frontend": {
+      "dependencies": [
+        "examenchuy_backend"
+      ],
+      "source": [
+        "src/examenchuy_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "examenchuy_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
